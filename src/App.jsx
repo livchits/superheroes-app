@@ -1,7 +1,9 @@
 import * as React from 'react';
 
+import Home from './screens/Home';
+
 function App() {
-  return <div>App</div>;
+  return <Home />;
 }
 
 export default App;
