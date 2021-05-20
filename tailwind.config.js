@@ -22,7 +22,7 @@ module.exports = {
       red: colors.red,
       yellow: colors.amber,
       green: colors.emerald,
-      blue: colors.blue,
+      blue: colors.lightBlue,
       indigo: colors.indigo,
       purple: colors.violet,
       pink: colors.pink,
