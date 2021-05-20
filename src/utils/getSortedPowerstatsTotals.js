@@ -19,10 +19,8 @@ function totalsFromObjectToTupleArray(totalsObject) {
   return sortedPowerstatsTotalsTupleArray;
 }
 
-function getSortedPowerstatsTotals(team) {
+export function getSortedPowerstatsTotals(team) {
   const powerstatsTotals = getPowerstatsTotals(team);
   const sortedPowerstatsTotals = totalsFromObjectToTupleArray(powerstatsTotals);
   return sortedPowerstatsTotals;
 }
-
-export default getSortedPowerstatsTotals;
