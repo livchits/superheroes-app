@@ -1,17 +1,11 @@
 import * as React from 'react';
 
 import { team, PROPERTIES_TO_GET_AVERAGE } from '../constants';
-import {
-  getHueValue,
-  getSortedPowerstatsTotals,
-  getAverageOf,
-  convertCmToFeetAndInches,
-  convertKgToLb,
-} from '../utils';
+import { getAverageOf, convertCmToFeetAndInches, convertKgToLb } from '../utils';
+
+import Powerstats from './Powerstats';
 
 function TeamStats() {
-  const sortedPowerstatsTotals = getSortedPowerstatsTotals(team);
-  const getHueForMaxTeamLength = getHueValue(team.length * 100);
   const averages = getAverageOf(team, PROPERTIES_TO_GET_AVERAGE);
 
   return (
@@ -22,36 +16,7 @@ function TeamStats() {
         </h1>
       </div>
       <div className='sm:flex'>
-        <article className='px-4 sm:flex-1'>
-          <h2 className='text-2xl font-bold'>Total Powerstats</h2>
-          <div className='my-2 text-opacity-70'>
-            <table>
-              <tbody>
-                {sortedPowerstatsTotals.map(([powerstat, total]) => (
-                  <tr key={powerstat}>
-                    <td className='px-1 uppercase'>{powerstat}</td>
-                    <td className='px-1 text-right text-gray-500 text-opacity-100'>
-                      {total}
-                    </td>
-                    <td className='w-full px-1'>
-                      <div className='bg-gray-300 h-3 mx-auto rounded-lg p-0.5'>
-                        <div
-                          className='h-full rounded-md rounded-r-none'
-                          style={{
-                            width: `${total / team.length}%`,
-                            backgroundColor: `hsla(${getHueForMaxTeamLength(
-                              total
-                            )}, 50%, 60%, .8)`,
-                          }}
-                        />
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-        </article>
+        <Powerstats team={team} />
         <article className='px-4'>
           <h2 className='mt-4 text-2xl font-bold sm:mt-0'>Average Appearance</h2>
           <ul className='px-1 mt-2'>
@@ -62,8 +27,8 @@ function TeamStats() {
                   <span className='uppercase'>{property} </span>
                   <span className='text-gray-500'>
                     {property === 'height'
-                      ? ` cm / ${convertCmToFeetAndInches(value)}`
-                      : ` kg / ${convertKgToLb(value)} lb`}
+                      ? `${value} cm / ${convertCmToFeetAndInches(value)}`
+                      : `${value} kg / ${convertKgToLb(value)} lb`}
                   </span>
                 </li>
               );
