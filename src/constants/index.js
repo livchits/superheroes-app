@@ -1,3 +1,8 @@
+const PROPERTIES_TO_GET_AVERAGE = ['height', 'weight'];
+const KG_TO_LB_FACTOR = 2.20462262185;
+const CM_TO_FEET_FACTOR = 0.032808;
+const FEET_TO_INCHES_FACTOR = 12;
+
 const team = [
   {
     response: 'success',
@@ -130,4 +135,10 @@ const team = [
   },
 ];
 
-export { team };
+export {
+  team,
+  PROPERTIES_TO_GET_AVERAGE,
+  KG_TO_LB_FACTOR,
+  CM_TO_FEET_FACTOR,
+  FEET_TO_INCHES_FACTOR,
+};
