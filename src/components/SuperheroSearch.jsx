@@ -1,38 +1,17 @@
 import * as React from 'react';
 
-import api from '../api/api';
+import useGetSuperheros from '../hooks/useGetSuperheros';
 
 function SuperheroSearch() {
   const [query, setQuery] = React.useState(null);
-  const [{ status, data }, setState] = React.useState({
-    status: 'idle',
-    data: null,
-    error: null,
-  });
-
-  React.useEffect(() => {
-    const abortController = new AbortController();
-    const getSuperheros = async (query) => {
-      setState((state) => ({ ...state, status: 'pending' }));
-      const { data, error } = await api(query, abortController);
-      error
-        ? setState((state) => ({ ...state, status: 'rejected', error }))
-        : setState((state) => ({ ...state, status: 'resolved', data }));
-    };
-    if (query !== null) {
-      getSuperheros(query);
-    }
-    return () => {
-      abortController.abort();
-    };
-  }, [query]);
+  const { status, data, error } = useGetSuperheros(query);
 
   const handleSubmit = (event) => {
     event.preventDefault();
     const { value } = event.target.elements.search;
     setQuery(value);
   };
-  console.log(data);
+
   return (
     <section>
       <h1>Search a Superhero</h1>
