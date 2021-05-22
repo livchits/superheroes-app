@@ -1,12 +1,12 @@
 import * as React from 'react';
 
-import useGetSuperheros from '../hooks/useGetSuperheros';
+import useGetSuperheroes from '../hooks/useGetSuperheroes';
 
 import SearchResults from './SearchResults';
 
-function SuperheroSearch() {
+function SuperheroesSearch() {
   const [query, setQuery] = React.useState(null);
-  const { status, data: superheros, error } = useGetSuperheros(query);
+  const { status, data: superheroes, error } = useGetSuperheroes(query);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -19,7 +19,7 @@ function SuperheroSearch() {
       <section className='w-11/12 py-8 mx-auto my-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-40'>
         <div className='text-center'>
           <h1 className='inline-block py-3 mx-auto mb-6 text-3xl font-semibold bg-blue-600 px-7 rounded-xl text-gray-50 ring-4 ring-opacity-80 ring-gray-200'>
-            Find Superheros
+            Find Superheroes
           </h1>
         </div>
         <form className='max-w-lg px-4 mx-auto ' onSubmit={handleSubmit}>
@@ -43,9 +43,9 @@ function SuperheroSearch() {
           </div>
         </form>
       </section>
-      {superheros && <SearchResults superheros={superheros} />}
+      {superheroes && <SearchResults superheroes={superheroes} />}
     </>
   );
 }
 
-export default SuperheroSearch;
+export default SuperheroesSearch;
