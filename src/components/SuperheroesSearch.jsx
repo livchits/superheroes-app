@@ -1,6 +1,7 @@
 import * as React from 'react';
 
 import useGetSuperheroes from '../hooks/useGetSuperheroes';
+import Rolling from '../assets/rolling.svg?component';
 
 import SearchResults from './SearchResults';
 
@@ -27,16 +28,23 @@ function SuperheroesSearch() {
             Enter a superhero name
           </label>
           <div className='flex justify-center mt-0.5'>
-            <input
-              required
-              className='flex-1 pl-2 text-gray-500 border-2 border-gray-400 rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent placeholder-opacity-80'
-              id='search'
-              name='search'
-              placeholder='Ex: "Batman"'
-              type='text'
-            />
+            <div className='relative w-full'>
+              <input
+                required
+                className='flex-1 w-full h-full pl-2 text-gray-500 border-2 border-gray-400 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent placeholder-opacity-80'
+                id='search'
+                name='search'
+                placeholder='Ex: "Batman"'
+                type='text'
+              />
+              {status === 'pending' && (
+                <div className='absolute top-0 right-0 mt-2 mr-2 animate-spin'>
+                  <Rolling />
+                </div>
+              )}
+            </div>
             <button
-              className='p-2 px-4 ml-2 text-lg transition duration-300 border-2 border-blue-600 rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 hover:bg-blue-600 active:bg-blue-500'
+              className='p-2 px-4 ml-2 text-lg transition duration-300 border-2 border-blue-600 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 hover:bg-blue-600 active:bg-blue-500'
               type='submit'
             >
               Search
