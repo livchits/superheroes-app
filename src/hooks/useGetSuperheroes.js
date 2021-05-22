@@ -22,6 +22,7 @@ function useGetSuperheros(query) {
       getSuperheros(query);
     }
     return () => {
+      setState({ data: null, error: null, status: 'idle' });
       abortController.abort();
     };
   }, [query]);

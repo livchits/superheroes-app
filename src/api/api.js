@@ -9,7 +9,10 @@ async function api(query, abortController) {
     });
 
     if (response.ok) {
-      const { results } = await response.json();
+      const { error, results } = await response.json();
+      if (error) {
+        throw new Error(error);
+      }
       const data = results.map(normalizeData);
       return { data };
     }
