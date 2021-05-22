@@ -28,6 +28,7 @@ function SuperheroesSearch() {
           </label>
           <div className='flex justify-center mt-0.5'>
             <input
+              required
               className='flex-1 pl-2 text-gray-500 border-2 border-gray-400 rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent placeholder-opacity-80'
               id='search'
               name='search'
