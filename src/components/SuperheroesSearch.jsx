@@ -43,6 +43,13 @@ function SuperheroesSearch() {
           </div>
         </form>
       </section>
+      {error && (
+        <article className='absolute w-11/12 uppercase transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-70 left-1/2 md:max-w-4xl'>
+          <p className='px-2 py-6 text-xl font-bold text-center text-gray-800'>
+            {error.message}
+          </p>
+        </article>
+      )}
       {superheroes && <SearchResults superheroes={superheroes} />}
     </>
   );
