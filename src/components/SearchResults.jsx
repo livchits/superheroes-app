@@ -11,7 +11,7 @@ function SearchResults({ superheroes }) {
             <div className='flex flex-col items-center justify-around w-1/2 p-2 py-6'>
               <p className='h-full text-xl font-bold text-center'>{name}</p>
               <button
-                className='block w-32 p-2 px-3 text-lg transition-colors duration-300 border-2 border-blue-600 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 hover:bg-blue-600 active:bg-blue-500'
+                className='block w-32 p-2 px-3 text-lg transition-colors duration-300 border-2 border-blue-600 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 bg-gradient-to-l hover:from-blue-500 hover:to-blue-600'
                 type='submit'
               >
                 Add to team

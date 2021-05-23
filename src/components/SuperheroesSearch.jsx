@@ -19,7 +19,7 @@ function SuperheroesSearch() {
     <>
       <section className='w-11/12 py-8 mx-auto my-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-40'>
         <div className='text-center'>
-          <h1 className='inline-block py-3 mx-auto mb-6 text-3xl font-semibold bg-blue-600 px-7 rounded-xl text-gray-50 ring-4 ring-opacity-80 ring-gray-200'>
+          <h1 className='inline-block py-3 mx-auto mb-6 text-3xl font-semibold bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50 ring-4 ring-opacity-80 ring-gray-200'>
             Find Superheroes
           </h1>
         </div>
@@ -44,7 +44,7 @@ function SuperheroesSearch() {
               )}
             </div>
             <button
-              className='p-2 px-4 ml-2 text-lg transition duration-300 border-2 border-blue-600 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 hover:bg-blue-600 active:bg-blue-500'
+              className='p-2 px-4 ml-2 text-lg transition duration-300 border-2 border-blue-600 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 bg-gradient-to-l hover:from-blue-500 hover:to-blue-600'
               type='submit'
             >
               Search
