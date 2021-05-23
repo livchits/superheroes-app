@@ -4,9 +4,9 @@ import PropTypes from 'prop-types';
 function SearchResults({ superheroes }) {
   return (
     <article className='absolute w-11/12 transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-70 left-1/2 md:max-w-4xl'>
-      <ul className='mt-4 text-blue-600 sm:flex sm:flex-wrap sm:px-2 md:w-auto'>
+      <ul className='my-4 text-blue-600 sm:flex sm:flex-wrap sm:px-2 md:w-auto'>
         {superheroes.map(({ name, id, imageUrl }) => (
-          <li key={id} className='flex justify-center rounded-lg lg:mx-2'>
+          <li key={id} className='flex justify-center mx-3 sm:w-5/12'>
             <img alt={name} className='h-40 m-2 shadow-md rounded-2xl' src={imageUrl} />
             <div className='flex flex-col items-center justify-around w-1/2 p-2 py-6'>
               <p className='h-full text-xl font-bold text-center'>{name}</p>
