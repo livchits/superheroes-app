@@ -1,9 +1,15 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-function SearchResults({ superheroes, setTeam }) {
+import { superheroIsOkToAdd } from '../utils';
+
+function SearchResults({ superheroes, setTeam, team }) {
   const handleAdd = (superhero) => {
-    setTeam((previusTeam) => [superhero, ...previusTeam]);
+    const addChecking = superheroIsOkToAdd(team, superhero);
+
+    addChecking.error
+      ? alert(...addChecking.messages)
+      : setTeam([...addChecking.newTeam]);
   };
 
   return (
@@ -36,6 +42,7 @@ function SearchResults({ superheroes, setTeam }) {
 SearchResults.propTypes = {
   superheroes: PropTypes.array.isRequired,
   setTeam: PropTypes.func.isRequired,
+  team: PropTypes.array.isRequired,
 };
 
 export default SearchResults;

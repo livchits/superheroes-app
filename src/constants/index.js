@@ -2,6 +2,16 @@ const PROPERTIES_TO_GET_AVERAGE = ['height', 'weight'];
 const KG_TO_LB_FACTOR = 2.20462262185;
 const CM_TO_FEET_FACTOR = 0.032808;
 const FEET_TO_INCHES_FACTOR = 12;
+const MAXIMUM_TEAM_MEMBERS = 6;
+const MAXIMUM_GOOD_MEMBERS = 3;
+const MAXIMUM_BAD_MEMBERS = 3;
+
+const ADD_CHECKING_ERRORS = {
+  maximumMembersReached: 'Maximum team membears already reached. Remove one',
+  maximumGoodMembersReached: 'Maximum good membears already reached. Remove one',
+  maximumBadMembersReached: 'Maximum bad membears already reached. Remove one',
+  superheroIsAlreadyInTeam: 'The superhero you want to add is already in the team',
+};
 
 const team = [
   {
@@ -34,4 +44,8 @@ export {
   KG_TO_LB_FACTOR,
   CM_TO_FEET_FACTOR,
   FEET_TO_INCHES_FACTOR,
+  MAXIMUM_TEAM_MEMBERS,
+  MAXIMUM_GOOD_MEMBERS,
+  MAXIMUM_BAD_MEMBERS,
+  ADD_CHECKING_ERRORS,
 };

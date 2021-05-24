@@ -6,7 +6,7 @@ import Rolling from '../assets/rolling.svg?component';
 
 import SearchResults from './SearchResults';
 
-function SuperheroesSearch({ setTeam }) {
+function SuperheroesSearch({ setTeam, team }) {
   const [query, setQuery] = React.useState(null);
   const { status, data: superheroes, error } = useGetSuperheroes(query);
 
@@ -60,11 +60,16 @@ function SuperheroesSearch({ setTeam }) {
           </p>
         </article>
       )}
-      {superheroes && <SearchResults setTeam={setTeam} superheroes={superheroes} />}
+      {superheroes && (
+        <SearchResults setTeam={setTeam} superheroes={superheroes} team={team} />
+      )}
     </>
   );
 }
 
-SuperheroesSearch.propTypes = { setTeam: PropTypes.func.isRequired };
+SuperheroesSearch.propTypes = {
+  setTeam: PropTypes.func.isRequired,
+  team: PropTypes.array.isRequired,
+};
 
 export default SuperheroesSearch;
