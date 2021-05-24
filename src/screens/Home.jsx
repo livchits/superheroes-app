@@ -10,7 +10,7 @@ function Home() {
   return (
     <>
       <TeamStats team={team} />
-      <SuperheroesSearch />
+      <SuperheroesSearch setTeam={setTeam} />
     </>
   );
 }

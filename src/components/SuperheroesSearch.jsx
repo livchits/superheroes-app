@@ -1,14 +1,15 @@
 import * as React from 'react';
+import PropTypes from 'prop-types';
 
 import useGetSuperheroes from '../hooks/useGetSuperheroes';
 import Rolling from '../assets/rolling.svg?component';
 
 import SearchResults from './SearchResults';
 
-function SuperheroesSearch() {
+function SuperheroesSearch({ setTeam }) {
   const [query, setQuery] = React.useState(null);
   const { status, data: superheroes, error } = useGetSuperheroes(query);
-  console.log(superheroes);
+
   const handleSubmit = (event) => {
     event.preventDefault();
     const { value } = event.target.elements.search;
@@ -59,9 +60,11 @@ function SuperheroesSearch() {
           </p>
         </article>
       )}
-      {superheroes && <SearchResults superheroes={superheroes} />}
+      {superheroes && <SearchResults setTeam={setTeam} superheroes={superheroes} />}
     </>
   );
 }
+
+SuperheroesSearch.propTypes = { setTeam: PropTypes.func.isRequired };
 
 export default SuperheroesSearch;
