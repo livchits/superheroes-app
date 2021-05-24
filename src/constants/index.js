@@ -7,9 +7,9 @@ const MAXIMUM_GOOD_MEMBERS = 3;
 const MAXIMUM_BAD_MEMBERS = 3;
 
 const ADD_CHECKING_ERRORS = {
-  maximumMembersReached: 'Maximum team membears already reached. Remove one',
-  maximumGoodMembersReached: 'Maximum good membears already reached. Remove one',
-  maximumBadMembersReached: 'Maximum bad membears already reached. Remove one',
+  maximumMembersReached: 'Maximum of team members has already reached. Remove one',
+  maximumGoodMembersReached: 'Maximum of "good" members has already reached. Remove one',
+  maximumBadMembersReached: 'Maximum of "bad" members has already reached. Remove one',
   superheroIsAlreadyInTeam: 'The superhero you want to add is already in the team',
 };
 
