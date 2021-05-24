@@ -8,7 +8,7 @@ import SearchResults from './SearchResults';
 function SuperheroesSearch() {
   const [query, setQuery] = React.useState(null);
   const { status, data: superheroes, error } = useGetSuperheroes(query);
-
+  console.log(superheroes);
   const handleSubmit = (event) => {
     event.preventDefault();
     const { value } = event.target.elements.search;

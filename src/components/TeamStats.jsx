@@ -1,11 +1,10 @@
 import * as React from 'react';
-
-import { team } from '../constants';
+import PropTypes from 'prop-types';
 
 import Appearance from './Appearance';
 import Powerstats from './Powerstats';
 
-function TeamStats() {
+function TeamStats({ team }) {
   return (
     <section className='w-11/12 py-8 mx-auto my-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-40'>
       <div className='text-center'>
@@ -20,5 +19,7 @@ function TeamStats() {
     </section>
   );
 }
+
+TeamStats.propTypes = { team: PropTypes.array.isRequired };
 
 export default TeamStats;
