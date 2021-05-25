@@ -2,6 +2,7 @@ import * as React from 'react';
 
 import SuperheroesSearch from '../components/SuperheroesSearch';
 import TeamStats from '../components/TeamStats';
+import SuperheroesList from '../components/SuperheroesList';
 import { team as initialTeam } from '../constants/index';
 
 function Home() {
@@ -11,6 +12,7 @@ function Home() {
     <>
       <TeamStats team={team} />
       <SuperheroesSearch setTeam={setTeam} team={team} />
+      <SuperheroesList team={team} />
     </>
   );
 }
