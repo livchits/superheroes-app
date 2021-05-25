@@ -2,24 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 import { superheroIsOkToAdd } from '../utils';
+import useCloseFromOutside from '../hooks/useCloseFromOutside';
 
 function SearchResults({ superheroes, setTeam, team, handleClose }) {
-  const resultsRef = React.useRef();
-
-  React.useEffect(() => {
-    const closeFromOutside = (event) => {
-      console.log(event);
-      if (!resultsRef.current?.contains(event.target)) {
-        handleClose();
-      }
-    };
-
-    document.addEventListener('mousedown', closeFromOutside);
-
-    return () => {
-      document.removeEventListener('mousedown', closeFromOutside);
-    };
-  });
+  const ref = useCloseFromOutside(handleClose);
 
   const handleAdd = (superhero) => {
     const addChecking = superheroIsOkToAdd(team, superhero);
@@ -31,7 +17,7 @@ function SearchResults({ superheroes, setTeam, team, handleClose }) {
 
   return (
     <article
-      ref={resultsRef}
+      ref={ref}
       className='absolute w-11/12 transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-70 left-1/2 md:max-w-4xl'
     >
       <button onClick={handleClose}>Close</button>
