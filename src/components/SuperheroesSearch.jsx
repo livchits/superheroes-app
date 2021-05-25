@@ -61,7 +61,12 @@ function SuperheroesSearch({ setTeam, team }) {
         </article>
       )}
       {superheroes && (
-        <SearchResults setTeam={setTeam} superheroes={superheroes} team={team} />
+        <SearchResults
+          handleClose={() => setQuery(null)}
+          setTeam={setTeam}
+          superheroes={superheroes}
+          team={team}
+        />
       )}
     </>
   );

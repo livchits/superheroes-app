@@ -3,7 +3,24 @@ import PropTypes from 'prop-types';
 
 import { superheroIsOkToAdd } from '../utils';
 
-function SearchResults({ superheroes, setTeam, team }) {
+function SearchResults({ superheroes, setTeam, team, handleClose }) {
+  const resultsRef = React.useRef();
+
+  React.useEffect(() => {
+    const closeFromOutside = (event) => {
+      console.log(event);
+      if (!resultsRef.current?.contains(event.target)) {
+        handleClose();
+      }
+    };
+
+    document.addEventListener('mousedown', closeFromOutside);
+
+    return () => {
+      document.removeEventListener('mousedown', closeFromOutside);
+    };
+  });
+
   const handleAdd = (superhero) => {
     const addChecking = superheroIsOkToAdd(team, superhero);
 
@@ -13,7 +30,11 @@ function SearchResults({ superheroes, setTeam, team }) {
   };
 
   return (
-    <article className='absolute w-11/12 transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-70 left-1/2 md:max-w-4xl'>
+    <article
+      ref={resultsRef}
+      className='absolute w-11/12 transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-70 left-1/2 md:max-w-4xl'
+    >
+      <button onClick={handleClose}>Close</button>
       <ul className='my-4 text-blue-600 sm:flex sm:flex-wrap sm:px-2 md:w-auto'>
         {superheroes.map((superhero) => {
           const { name, id, imageUrl } = superhero;
@@ -43,6 +64,7 @@ SearchResults.propTypes = {
   superheroes: PropTypes.array.isRequired,
   setTeam: PropTypes.func.isRequired,
   team: PropTypes.array.isRequired,
+  handleClose: PropTypes.func,
 };
 
 export default SearchResults;
