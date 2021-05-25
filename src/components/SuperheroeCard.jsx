@@ -1,9 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import { getHueValue } from '../utils/getHueValue';
-
-const getHueforMaxValue100 = getHueValue(100);
+import PowerstatsForCard from './PowerstatsForCard';
 
 function SuperheroeCard({ superheroe }) {
   const { name, imageUrl, powerstats } = superheroe;
@@ -13,29 +11,7 @@ function SuperheroeCard({ superheroe }) {
       <h2 className='mb-2 text-2xl font-bold text-center'>{name}</h2>
       <div className='flex mx-auto'>
         <img alt={name} className='mb-2 ml-2 mr-1 h-44 rounded-xl' src={imageUrl} />
-        <ul className='flex-1 ml-1 mr-2'>
-          {Object.entries(powerstats).map(([powerstat, value]) => (
-            <li key={powerstat}>
-              <div className='flex justify-between mb-1 text-base leading-3'>
-                <div className='pr-3 capitalize'>{powerstat}</div>
-                <div className='text-right text-gray-500 text-opacity-100 '>{value}</div>
-              </div>
-              <div className='w-full mb-1.5'>
-                <div className='bg-gray-300 h-2 mx-auto rounded-lg p-0.5'>
-                  <div
-                    className='h-full rounded-md rounded-r-none'
-                    style={{
-                      width: `${value}%`,
-                      backgroundColor: `hsla(${getHueforMaxValue100(
-                        value
-                      )}, 50%, 60%, .8)`,
-                    }}
-                  />
-                </div>
-              </div>
-            </li>
-          ))}
-        </ul>
+        <PowerstatsForCard powerstats={powerstats} />
       </div>
       <div className='flex mb-2 justify-evenly'>
         <button
