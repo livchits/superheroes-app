@@ -9,10 +9,18 @@ function TeamStats({ team }) {
       <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50 ring-4 ring-opacity-80 ring-gray-200'>
         Team Stats
       </h1>
-      <div className='sm:flex'>
-        <Powerstats team={team} />
-        <Appearance team={team} />
-      </div>
+      {team.length ? (
+        <div className='sm:flex'>
+          <Powerstats team={team} />
+          <Appearance team={team} />
+        </div>
+      ) : (
+        <article className='max-w-lg px-3 mx-auto text-2xl font-bold text-center'>
+          <p>Your team has no members.</p>
+          <p className='mb-2 font-normal'>Search superheroes and add them to the team.</p>
+          <p> Have fun!</p>
+        </article>
+      )}
     </section>
   );
 }
