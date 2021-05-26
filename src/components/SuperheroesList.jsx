@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import SuperheroeCard from './SuperheroeCard';
+import SuperheroCard from './SuperheroCard';
 
 function SuperheroesList({ team }) {
   return (
@@ -10,8 +10,8 @@ function SuperheroesList({ team }) {
         Your team
       </h1>
       <ul>
-        {team.map((superheroe) => (
-          <SuperheroeCard key={superheroe.id} superheroe={superheroe} />
+        {team.map((superhero) => (
+          <SuperheroCard key={superhero.id} superhero={superhero} />
         ))}
       </ul>
     </section>

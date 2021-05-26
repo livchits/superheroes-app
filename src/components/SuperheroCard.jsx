@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 
 import PowerstatsForCard from './PowerstatsForCard';
 
-function SuperheroeCard({ superheroe }) {
-  const { name, imageUrl, powerstats } = superheroe;
+function SuperheroCard({ superhero }) {
+  const { name, imageUrl, powerstats } = superhero;
 
   return (
     <li className='w-11/12 mx-auto my-2 border-2 border-gray-300 shadow-sm text-opacity-70 rounded-xl'>
@@ -31,8 +31,8 @@ function SuperheroeCard({ superheroe }) {
   );
 }
 
-SuperheroeCard.propTypes = {
-  superheroe: PropTypes.object,
+SuperheroCard.propTypes = {
+  superhero: PropTypes.object,
 };
 
-export default SuperheroeCard;
+export default SuperheroCard;
