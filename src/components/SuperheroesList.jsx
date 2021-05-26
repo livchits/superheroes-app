@@ -9,7 +9,7 @@ function SuperheroesList({ team }) {
       <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50 ring-4 ring-opacity-80 ring-gray-200'>
         Your team
       </h1>
-      <ul>
+      <ul className='sm:flex sm:flex-wrap sm:justify-evenly md:justify-start md:ml-1'>
         {team.map((superhero) => (
           <SuperheroCard key={superhero.id} superhero={superhero} />
         ))}

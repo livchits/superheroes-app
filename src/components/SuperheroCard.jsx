@@ -7,7 +7,7 @@ function SuperheroCard({ superhero }) {
   const { name, imageUrl, powerstats } = superhero;
 
   return (
-    <li className='w-11/12 mx-auto my-2 border-2 border-gray-300 shadow-sm text-opacity-70 rounded-xl'>
+    <li className='w-11/12 mx-auto my-2 border-2 border-gray-300 shadow-sm text-opacity-70 rounded-xl sm:w-72 sm:mx-0 md:mx-1'>
       <h2 className='mb-2 text-2xl font-bold text-center'>{name}</h2>
       <div className='flex mx-auto'>
         <img alt={name} className='mb-2 ml-2 mr-1 h-44 rounded-xl' src={imageUrl} />
