@@ -3,13 +3,12 @@ const KG_TO_LB_FACTOR = 2.20462262185;
 const CM_TO_FEET_FACTOR = 0.032808;
 const FEET_TO_INCHES_FACTOR = 12;
 const MAXIMUM_TEAM_MEMBERS = 6;
-const MAXIMUM_GOOD_MEMBERS = 3;
-const MAXIMUM_BAD_MEMBERS = 3;
+const MAXIMUM_ALIGNMENT_MEMBERS = 3;
 
 const ADD_CHECKING_ERRORS = {
   maximumMembersReached: 'Maximum of team members has already reached. Remove one',
-  maximumGoodMembersReached: 'Maximum of "good" members has already reached. Remove one',
-  maximumBadMembersReached: 'Maximum of "bad" members has already reached. Remove one',
+  maximumAlignmentReached: (alignment) =>
+    `Maximum of ${alignment} members has already reached. Remove one`,
   superheroIsAlreadyInTeam: 'The superhero you want to add is already in the team',
 };
 
@@ -45,7 +44,6 @@ export {
   CM_TO_FEET_FACTOR,
   FEET_TO_INCHES_FACTOR,
   MAXIMUM_TEAM_MEMBERS,
-  MAXIMUM_GOOD_MEMBERS,
-  MAXIMUM_BAD_MEMBERS,
+  MAXIMUM_ALIGNMENT_MEMBERS,
   ADD_CHECKING_ERRORS,
 };

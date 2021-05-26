@@ -9,7 +9,6 @@ function SearchResults({ superheroes, setTeam, team, handleClose }) {
   const ref = useCloseFromOutside(handleClose);
 
   const handleAdd = (superhero) => {
-    console.log(superhero);
     const addChecking = superheroIsOkToAdd(team, superhero);
 
     addChecking.error

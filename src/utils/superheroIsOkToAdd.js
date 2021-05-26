@@ -1,7 +1,6 @@
 import {
   MAXIMUM_TEAM_MEMBERS,
-  MAXIMUM_GOOD_MEMBERS,
-  MAXIMUM_BAD_MEMBERS,
+  MAXIMUM_ALIGNMENT_MEMBERS,
   ADD_CHECKING_ERRORS,
 } from '../constants';
 
@@ -14,12 +13,8 @@ function getTotalAlignment(previusTeam, alignmentToSum) {
   return total;
 }
 
-const {
-  maximumMembersReached,
-  maximumGoodMembersReached,
-  maximumBadMembersReached,
-  superheroIsAlreadyInTeam,
-} = ADD_CHECKING_ERRORS;
+const { maximumMembersReached, maximumAlignmentReached, superheroIsAlreadyInTeam } =
+  ADD_CHECKING_ERRORS;
 
 function allConditionsTrue(addConditions) {
   return !Object.values(addConditions).some((condition) => condition !== true);
@@ -41,12 +36,9 @@ export function superheroIsOkToAdd(previusTeam, superhero) {
   const addConditions = {
     maximumMembersNotReach:
       previusTeam.length < MAXIMUM_TEAM_MEMBERS || maximumMembersReached,
-    maximumGoodMembersNotReach:
-      getTotalAlignment(previusTeam, 'good') < MAXIMUM_GOOD_MEMBERS ||
-      maximumGoodMembersReached,
-    maximumBadMembersNotReach:
-      getTotalAlignment(previusTeam, 'bad') < MAXIMUM_BAD_MEMBERS ||
-      maximumBadMembersReached,
+    maximumAlignmentMembersNotReach:
+      getTotalAlignment(previusTeam, superhero.alignment) < MAXIMUM_ALIGNMENT_MEMBERS ||
+      maximumAlignmentReached(superhero.alignment),
     superheroIsNotInTeam:
       !previusTeam.find(({ id }) => id === superhero.id) || superheroIsAlreadyInTeam,
   };
