@@ -22,6 +22,7 @@ function SearchResults({ superheroes, setTeam, team, handleClose }) {
       className='absolute w-11/12 transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-90 left-1/2 md:max-w-4xl'
     >
       <button
+        aria-label='Close search results'
         className='absolute right-0.5 top-0.5 md:right-1.5 md:top-1.5 p-2 bg-gray-400 border rounded-lg bg-opacity-80 hover:bg-gray-500 transition-colors duration-200 group focus:ring-gray-600 focus:ring-2 focus:outline-none'
         onClick={handleClose}
       >
