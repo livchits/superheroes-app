@@ -1,5 +1,6 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
+import { XIcon } from '@heroicons/react/solid';
 
 import { superheroIsOkToAdd } from '../utils';
 import useCloseFromOutside from '../hooks/useCloseFromOutside';
@@ -18,9 +19,14 @@ function SearchResults({ superheroes, setTeam, team, handleClose }) {
   return (
     <article
       ref={ref}
-      className='absolute w-11/12 transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-70 left-1/2 md:max-w-4xl'
+      className='absolute w-11/12 transform -translate-x-1/2 bg-gray-300 rounded-lg bg-opacity-90 left-1/2 md:max-w-4xl'
     >
-      <button onClick={handleClose}>Close</button>
+      <button
+        className='absolute right-0.5 top-0.5 md:right-1.5 md:top-1.5 p-2 bg-gray-400 border rounded-lg bg-opacity-80 hover:bg-gray-500 transition-colors duration-200 group focus:ring-gray-600 focus:ring-2 focus:outline-none'
+        onClick={handleClose}
+      >
+        <XIcon className='w-6 mx-auto text-gray-600 transition-colors duration-200 group-hover:text-gray-300' />
+      </button>
       <ul className='my-4 text-blue-600 sm:flex sm:flex-wrap sm:px-2 md:w-auto'>
         {superheroes.map((superhero) => {
           const { name, id, imageUrl } = superhero;
