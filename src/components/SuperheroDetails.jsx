@@ -40,32 +40,32 @@ function SuperheroDetails({ superhero, handleClose }) {
           <img alt={name} className='mb-2 ml-2 mr-1 h-44 rounded-xl' src={imageUrl} />
           <PowerstatsForCard powerstats={powerstats} />
         </div>
-        <ul className='mx-2 text-lg'>
-          <li>
+        <ul className='mx-2 text-lg leading-tight'>
+          <li className='mb-1'>
             <span className='font-bold uppercase'>Weight: </span>
             {`${weight[0]} / ${weight[1]}`}
           </li>
-          <li>
+          <li className='mb-1'>
             <span className='font-bold uppercase'>Height: </span>
             {`${height[0]} / ${height[1]}`}
           </li>
-          <li>
+          <li className='mb-1'>
             <span className='font-bold uppercase'>Full name: </span>
             {`${fullName}`}
           </li>
-          <li>
+          <li className='mb-1'>
             <span className='font-bold uppercase'>Aliases: </span>
             {formatList(aliases)}
           </li>
-          <li>
+          <li className='mb-1'>
             <span className='font-bold uppercase'>Eye color: </span>
             {`${eyeColor}`}
           </li>
-          <li>
+          <li className='mb-1'>
             <span className='font-bold uppercase'>Hair color: </span>
             {`${hairColor}`}
           </li>
-          <li>
+          <li className='mb-1'>
             <span className='font-bold uppercase'>Work place: </span>
             {`${workPlace}`}
           </li>
