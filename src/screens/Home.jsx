@@ -12,7 +12,7 @@ function Home() {
     <>
       <TeamStats team={team} />
       <SuperheroesSearch setTeam={setTeam} team={team} />
-      <SuperheroesList setTeam={setTeam} team={team} />
+      {Boolean(team.length) && <SuperheroesList setTeam={setTeam} team={team} />}
     </>
   );
 }
