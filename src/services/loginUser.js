@@ -6,17 +6,9 @@ export default function loginUser(formData) {
     body: formData,
   })
     .then((response) => {
-      if (response.ok) {
+      if (response.ok || response.status === 401) {
         return response.json();
       }
-      throw new Error(response.statusText);
     })
-    .then((tokenObject) => tokenObject);
-  // .then(({ token }) => {
-  //   window.localStorage.setItem(
-  //     `superheores_app_user_${token}`,
-  //     JSON.stringify({ token })
-  //   );
-  //   return { [`superheores_app_user_${token}`]: { token } };
-  // });
+    .then((data) => data);
 }

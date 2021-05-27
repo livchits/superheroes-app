@@ -6,6 +6,7 @@ import { useUser } from '../context/UserContext';
 
 function Login() {
   const [user, setUser] = useUser();
+  const [error, setError] = React.useState({ error: false, message: null });
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -17,12 +18,15 @@ function Login() {
     const formData = new FormData(event.target);
 
     loginUser(formData)
-      .then(({ token }) => {
-        window.localStorage.setItem('superheroes_app_user', JSON.stringify({ token }));
-        setUser({ superheroes_app_user: { token } });
+      .then((responseData) => {
+        if (responseData.error) {
+          throw new Error(responseData.error);
+        }
+        window.localStorage.setItem('superheroes_app_user', JSON.stringify(responseData));
+        setUser({ superheroes_app_user: responseData });
       })
       .catch((error) => {
-        console.error(error);
+        setError({ error: true, message: error.message });
       });
   };
 
@@ -57,6 +61,7 @@ function Login() {
       <button className='block p-2 m-auto text-2xl font-black transition-all duration-100 ease-in rounded-md px-9 ring-2 ring-gray-50 ring-opacity-75 hover:ring-4 focus:ring-4 focus:ring-indigo-400 active:text-gray-200 focus:outline-none'>
         Login
       </button>
+      {error && <div>{error.message}</div>}
     </form>
   );
 }
