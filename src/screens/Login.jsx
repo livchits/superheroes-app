@@ -1,12 +1,11 @@
 import * as React from 'react';
 import { Redirect } from 'react-router';
 
-import loginUser from '../services/loginUser';
-import { useUser } from '../context/UserContext';
+import useLogin from '../hooks/useLogin';
 
 function Login() {
-  const [user, setUser] = useUser();
-  const [error, setError] = React.useState({ error: false, message: null });
+  const [formData, setFormData] = React.useState(null);
+  const { user, error } = useLogin(formData);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -16,18 +15,7 @@ function Login() {
     } = event.target.elements;
 
     const formData = new FormData(event.target);
-
-    loginUser(formData)
-      .then((responseData) => {
-        if (responseData.error) {
-          throw new Error(responseData.error);
-        }
-        window.localStorage.setItem('superheroes_app_user', JSON.stringify(responseData));
-        setUser({ superheroes_app_user: responseData });
-      })
-      .catch((error) => {
-        setError({ error: true, message: error.message });
-      });
+    setFormData(formData);
   };
 
   return user ? (
@@ -42,7 +30,7 @@ function Login() {
           className='p-2 text-gray-800 border-none rounded-md outline-none focus:ring-4 focus:ring-indigo-400'
           id='email'
           name='email'
-          placeholder='johndoe'
+          placeholder='your@email.com'
           type='email'
         />
       </div>
@@ -54,7 +42,7 @@ function Login() {
           className='p-2 text-gray-800 border-none rounded-md outline-none focus:ring-4 focus:ring-indigo-400'
           id='password'
           name='password'
-          placeholder='pass'
+          placeholder='Your password'
           type='password'
         />
       </div>
