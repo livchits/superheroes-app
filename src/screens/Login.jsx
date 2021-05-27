@@ -3,6 +3,7 @@ import { Redirect } from 'react-router';
 
 import useLogin from '../hooks/useLogin';
 import Rolling from '../assets/rolling.svg?component';
+import LoginError from '../components/LoginError';
 
 function Login() {
   const [formData, setFormData] = React.useState(null);
@@ -58,7 +59,7 @@ function Login() {
           className={`${status === 'pending'
               ? 'hover:bg-transparent'
               : 'hover:from-blue-500 hover:to-blue-600 hover:text-gray-100'
-            } block w-32 px-4 py-2 mx-auto text-2xl font-bold text-blue-600 transition duration-300 shadow-md ring-2 ring-blue-600 rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent bg-gradient-to-l`}
+            } block w-32 px-4 py-2 mx-auto text-2xl font-bold text-blue-600 transition duration-300 shadow-md ring-2 ring-blue-600 rounded-xl focus:ring-4 focus:ring-blue-500 focus:outline-none focus:border-transparent bg-gradient-to-l`}
         >
           {status === 'pending' ? (
             <div className='mx-auto bg-transparent w-min animate-spin'>
@@ -68,7 +69,7 @@ function Login() {
             'Login'
           )}
         </button>
-        {error && <div>{error.message}</div>}
+        {error.error && <LoginError message={error.message} />}
       </form>
     </main>
   );
