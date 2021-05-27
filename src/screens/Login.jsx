@@ -18,9 +18,8 @@ function Login() {
 
     loginUser(formData)
       .then(({ token }) => {
-        const userProp = `superheores_app_user_${token}`;
-        window.localStorage.setItem(userProp, JSON.stringify({ token }));
-        setUser({ userProp: { token } });
+        window.localStorage.setItem('superheroes_app_user', JSON.stringify({ token }));
+        setUser({ superheroes_app_user: { token } });
       })
       .catch((error) => {
         console.error(error);
