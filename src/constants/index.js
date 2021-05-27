@@ -12,6 +12,8 @@ const ADD_CHECKING_ERRORS = {
   superheroIsAlreadyInTeam: 'The superhero you want to add is already in the team',
 };
 
+const LOGIN_URL = 'http://challenge-react.alkemy.org/';
+
 const team = [
   {
     id: '70',
@@ -46,4 +48,5 @@ export {
   MAXIMUM_TEAM_MEMBERS,
   MAXIMUM_ALIGNMENT_MEMBERS,
   ADD_CHECKING_ERRORS,
+  LOGIN_URL,
 };
