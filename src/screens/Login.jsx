@@ -22,42 +22,55 @@ function Login() {
   return user ? (
     <Redirect to='/home' />
   ) : (
-    <form onSubmit={handleSubmit}>
-      <div className='w-2/3 pb-1 mx-auto max-w-min'>
-        <label className='block py-1 pr-2 text-xl' htmlFor='email'>
-          Email
-        </label>
-        <input
-          className='p-2 text-gray-800 border-none rounded-md outline-none focus:ring-4 focus:ring-indigo-400'
-          id='email'
-          name='email'
-          placeholder='your@email.com'
-          type='email'
-        />
-      </div>
-      <div className='w-2/3 mx-auto mb-6 max-w-min'>
-        <label className='block py-1 pr-2 text-xl' htmlFor='password'>
-          Password
-        </label>
-        <input
-          className='p-2 text-gray-800 border-none rounded-md outline-none focus:ring-4 focus:ring-indigo-400'
-          id='password'
-          name='password'
-          placeholder='Your password'
-          type='password'
-        />
-      </div>
-      <button className='block w-32 p-2 m-auto text-2xl font-black transition-all duration-100 ease-in rounded-md px-9 ring-2 ring-red-500 ring-opacity-75 hover:ring-4 focus:ring-4 focus:ring-indigo-400 active:text-gray-200 focus:outline-none'>
-        {status === 'pending' ? (
-          <div className='mx-auto w-min animate-spin'>
-            <Rolling />
-          </div>
-        ) : (
-          'Login'
-        )}
-      </button>
-      {error && <div>{error.message}</div>}
-    </form>
+    <main className='min-h-screen text-gray-700 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-40'>
+      <h1 className='py-12 text-4xl leading-normal text-center text-shadow'>
+        Welcome to the <br />
+        <span className='text-5xl font-bold text-transparent bg-clip-text text-shadow-none bg-gradient-to-l from-blue-500 to-blue-600'>
+          Superheroes App
+        </span>
+      </h1>
+      <form onSubmit={handleSubmit}>
+        <div className='w-2/3 pb-6 mx-auto max-w-min'>
+          <label className='block pl-0.5 text-lg font-bold' htmlFor='email'>
+            Email
+          </label>
+          <input
+            className='p-2.5 text-gray-700 border-none rounded-md shadow-sm outline-none ring-1 ring-gray-300 focus:ring-4 focus:ring-blue-500'
+            id='email'
+            name='email'
+            placeholder='your@email.com'
+            type='email'
+          />
+        </div>
+        <div className='w-2/3 mx-auto mb-6 max-w-min'>
+          <label className='block text-lg pl-0.5 font-bold' htmlFor='password'>
+            Password
+          </label>
+          <input
+            className='p-2.5 text-gray-700 border-none rounded-md shadow-sm outline-none ring-1 ring-gray-300 focus:ring-4 focus:ring-blue-500'
+            id='password'
+            name='password'
+            placeholder='Your password'
+            type='password'
+          />
+        </div>
+        <button
+          className={`${status === 'pending'
+              ? 'hover:bg-transparent'
+              : 'hover:from-blue-500 hover:to-blue-600 hover:text-gray-100'
+            } block w-32 px-4 py-2 mx-auto text-2xl font-bold text-blue-600 transition duration-300 shadow-md ring-2 ring-blue-600 rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent bg-gradient-to-l`}
+        >
+          {status === 'pending' ? (
+            <div className='mx-auto bg-transparent w-min animate-spin'>
+              <Rolling />
+            </div>
+          ) : (
+            'Login'
+          )}
+        </button>
+        {error && <div>{error.message}</div>}
+      </form>
+    </main>
   );
 }
 
