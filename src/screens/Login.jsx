@@ -2,10 +2,11 @@ import * as React from 'react';
 import { Redirect } from 'react-router';
 
 import useLogin from '../hooks/useLogin';
+import Rolling from '../assets/rolling.svg?component';
 
 function Login() {
   const [formData, setFormData] = React.useState(null);
-  const { user, error } = useLogin(formData);
+  const { user, error, status } = useLogin(formData);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -46,8 +47,14 @@ function Login() {
           type='password'
         />
       </div>
-      <button className='block p-2 m-auto text-2xl font-black transition-all duration-100 ease-in rounded-md px-9 ring-2 ring-gray-50 ring-opacity-75 hover:ring-4 focus:ring-4 focus:ring-indigo-400 active:text-gray-200 focus:outline-none'>
-        Login
+      <button className='block w-32 p-2 m-auto text-2xl font-black transition-all duration-100 ease-in rounded-md px-9 ring-2 ring-red-500 ring-opacity-75 hover:ring-4 focus:ring-4 focus:ring-indigo-400 active:text-gray-200 focus:outline-none'>
+        {status === 'pending' ? (
+          <div className='mx-auto w-min animate-spin'>
+            <Rolling />
+          </div>
+        ) : (
+          'Login'
+        )}
       </button>
       {error && <div>{error.message}</div>}
     </form>

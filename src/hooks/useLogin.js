@@ -6,9 +6,11 @@ import loginUser from '../services/loginUser';
 function useLogin(formData) {
   const [user, setUser] = useUser();
   const [error, setError] = React.useState({ error: false, message: null });
+  const [status, setStatus] = React.useState('idle');
 
   React.useEffect(() => {
     if (formData) {
+      setStatus('pending');
       loginUser(formData)
         .then((responseData) => {
           if (responseData.error) {
@@ -22,11 +24,12 @@ function useLogin(formData) {
         })
         .catch((error) => {
           setError({ error: true, message: error.message });
-        });
+        })
+        .finally(() => setStatus('complete'));
     }
   }, [formData, setUser]);
 
-  return { user, error };
+  return { user, error, status };
 }
 
 export default useLogin;
