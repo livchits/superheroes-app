@@ -9,9 +9,12 @@ function useLogin(formData) {
   const [status, setStatus] = React.useState('idle');
 
   React.useEffect(() => {
+    const abortController = new AbortController();
+
     if (formData) {
       setStatus('pending');
-      loginUser(formData)
+
+      loginUser(formData, abortController)
         .then((responseData) => {
           if (responseData.error) {
             throw new Error(responseData.error);
@@ -27,6 +30,7 @@ function useLogin(formData) {
         })
         .finally(() => setStatus('complete'));
     }
+    return () => abortController.abort();
   }, [formData, setUser]);
 
   return { user, error, status };
