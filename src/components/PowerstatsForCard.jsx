@@ -15,7 +15,7 @@ function PowerstatsForCard({ powerstats }) {
             <div className='text-right text-gray-500 text-opacity-100 '>{value}</div>
           </div>
           <div className='w-full mb-1.5'>
-            <div className='bg-gray-300 h-2 mx-auto rounded-lg p-0.5'>
+            <div className='bg-gray-400 bg-opacity-90 h-2 mx-auto rounded-lg p-0.5'>
               <div
                 className='h-full rounded-md rounded-r-none'
                 style={{
