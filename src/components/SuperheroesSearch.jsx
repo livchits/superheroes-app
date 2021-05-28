@@ -21,7 +21,7 @@ function SuperheroesSearch({ setTeam, team }) {
 
   return (
     <>
-      <section className='w-11/12 py-6 mx-auto my-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>
+      <section className='w-11/12 py-5 mx-auto my-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>
         {error && <ErrorSearch handleClose={handleClose} message={error.message} />}
         <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50'>
           Find Superheroes
