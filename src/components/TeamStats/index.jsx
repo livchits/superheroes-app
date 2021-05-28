@@ -11,7 +11,7 @@ function TeamStats({ team }) {
         Team Stats
       </h1>
       {team.length ? (
-        <div className='sm:flex'>
+        <div className='sm:flex md:px-7'>
           <Powerstats team={team} />
           <Appearance team={team} />
         </div>
