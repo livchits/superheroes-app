@@ -17,33 +17,7 @@ const LOGIN_URL = 'http://challenge-react.alkemy.org/';
 const { VITE_API_ACCESS_TOKEN } = import.meta.env;
 const SEARCH_URL = `https://www.superheroapi.com/api.php/${VITE_API_ACCESS_TOKEN}/search/`;
 
-const team = [
-  {
-    id: '70',
-    name: 'Batman',
-    powerstats: {
-      intelligence: '100',
-      strength: '26',
-      speed: '27',
-      durability: '50',
-      power: '47',
-      combat: '100',
-    },
-    fullName: 'Bruce Wayne',
-    aliases: ['Insider', 'Matches Malone'],
-    alignment: 'good',
-    height: ["6'2", '188 cm'],
-    weight: ['210 lb', '95 kg'],
-    eyeColor: 'blue',
-    hairColor: 'black',
-    workPlace:
-      'Batcave, Stately Wayne Manor, Gotham City; Hall of Justice, Justice League Watchtower',
-    imageUrl: 'https://www.superherodb.com/pictures2/portraits/10/100/639.jpg',
-  },
-];
-
 export {
-  team,
   PROPERTIES_TO_GET_AVERAGE,
   KG_TO_LB_FACTOR,
   CM_TO_FEET_FACTOR,

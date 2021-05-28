@@ -3,10 +3,9 @@ import * as React from 'react';
 import Search from '../components/Search';
 import TeamStats from '../components/TeamStats';
 import TeamList from '../components/TeamList';
-import { team as initialTeam } from '../constants/index';
 
 function Home() {
-  const [team, setTeam] = React.useState(initialTeam);
+  const [team, setTeam] = React.useState([]);
 
   return (
     <main className='min-h-screen py-2'>
