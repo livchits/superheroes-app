@@ -20,7 +20,7 @@ function Powerstats({ team }) {
                   {total}
                 </td>
                 <td className='w-full px-1'>
-                  <div className='bg-gray-300 h-3 mx-auto rounded-lg p-0.5'>
+                  <div className='bg-gray-400 h-3 mx-auto rounded-lg p-0.5'>
                     <div
                       className='h-full rounded-md rounded-r-none'
                       style={{
