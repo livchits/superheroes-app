@@ -2,10 +2,10 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { XIcon } from '@heroicons/react/solid';
 
-import { superheroIsOkToAdd } from '../utils';
-import useCloseFromOutside from '../hooks/useCloseFromOutside';
+import { superheroIsOkToAdd } from '../../utils';
+import useCloseFromOutside from '../../hooks/useCloseFromOutside';
 
-function SearchResults({ superheroes, setTeam, team, handleClose }) {
+function Results({ superheroes, setTeam, team, handleClose }) {
   const ref = useCloseFromOutside(handleClose);
 
   const handleAdd = (superhero) => {
@@ -53,11 +53,11 @@ function SearchResults({ superheroes, setTeam, team, handleClose }) {
   );
 }
 
-SearchResults.propTypes = {
+Results.propTypes = {
   superheroes: PropTypes.array.isRequired,
   setTeam: PropTypes.func.isRequired,
   team: PropTypes.array.isRequired,
   handleClose: PropTypes.func,
 };
 
-export default SearchResults;
+export default Results;

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import { getHueValue, getSortedPowerstatsTotals } from '../utils';
+import { getHueValue, getSortedPowerstatsTotals } from '../../utils';
 
 function Powerstats({ team }) {
   const sortedPowerstatsTotals = getSortedPowerstatsTotals(team);

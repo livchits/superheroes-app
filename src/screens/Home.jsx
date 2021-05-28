@@ -1,8 +1,8 @@
 import * as React from 'react';
 
-import SuperheroesSearch from '../components/SuperheroesSearch';
+import Search from '../components/Search';
 import TeamStats from '../components/TeamStats';
-import SuperheroesList from '../components/SuperheroesList';
+import TeamList from '../components/TeamList';
 import { team as initialTeam } from '../constants/index';
 
 function Home() {
@@ -11,8 +11,8 @@ function Home() {
   return (
     <main className='min-h-screen py-2'>
       <TeamStats team={team} />
-      <SuperheroesSearch setTeam={setTeam} team={team} />
-      {Boolean(team.length) && <SuperheroesList setTeam={setTeam} team={team} />}
+      <Search setTeam={setTeam} team={team} />
+      {Boolean(team.length) && <TeamList setTeam={setTeam} team={team} />}
     </main>
   );
 }

@@ -1,8 +1,8 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import { PROPERTIES_TO_GET_AVERAGE } from '../constants';
-import { convertCmToFeetAndInches, convertKgToLb, getAverageOf } from '../utils';
+import { PROPERTIES_TO_GET_AVERAGE } from '../../constants';
+import { convertCmToFeetAndInches, convertKgToLb, getAverageOf } from '../../utils';
 
 function Appearance({ team }) {
   const averages = getAverageOf(team, PROPERTIES_TO_GET_AVERAGE);

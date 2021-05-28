@@ -2,12 +2,12 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { XIcon } from '@heroicons/react/solid';
 
-import useCloseFromOutside from '../hooks/useCloseFromOutside';
-import { formatList } from '../utils';
+import useCloseFromOutside from '../../../hooks/useCloseFromOutside';
+import { formatList } from '../../../utils';
 
 import PowerstatsForCard from './PowerstatsForCard';
 
-function SuperheroDetails({ superhero, handleClose }) {
+function Details({ superhero, handleClose }) {
   const ref = useCloseFromOutside(handleClose);
 
   const {
@@ -75,9 +75,9 @@ function SuperheroDetails({ superhero, handleClose }) {
   );
 }
 
-SuperheroDetails.propTypes = {
+Details.propTypes = {
   superhero: PropTypes.object.isRequired,
   handleClose: PropTypes.func.isRequired,
 };
 
-export default SuperheroDetails;
+export default Details;

@@ -2,9 +2,9 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 
 import PowerstatsForCard from './PowerstatsForCard';
-import SuperheroDetails from './SuperheroDetails';
+import Details from './Details';
 
-function SuperheroCard({ superhero, handleRemove }) {
+function Card({ superhero, handleRemove }) {
   const { name, imageUrl, powerstats, id } = superhero;
   const [showDetails, setShowDetails] = React.useState(false);
 
@@ -34,18 +34,15 @@ function SuperheroCard({ superhero, handleRemove }) {
         </div>
       </li>
       {showDetails && (
-        <SuperheroDetails
-          handleClose={() => setShowDetails(false)}
-          superhero={superhero}
-        />
+        <Details handleClose={() => setShowDetails(false)} superhero={superhero} />
       )}
     </>
   );
 }
 
-SuperheroCard.propTypes = {
+Card.propTypes = {
   superhero: PropTypes.object.isRequired,
   handleRemove: PropTypes.func.isRequired,
 };
 
-export default SuperheroCard;
+export default Card;

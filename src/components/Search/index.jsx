@@ -1,13 +1,13 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import useGetSuperheroes from '../hooks/useGetSuperheroes';
-import Rolling from '../assets/rolling.svg?component';
+import useGetSuperheroes from '../../hooks/useGetSuperheroes';
+import Rolling from '../../assets/rolling.svg?component';
 
-import SearchResults from './SearchResults';
-import ErrorSearch from './ErrorSearch';
+import Results from './Results';
+import Error from './Error';
 
-function SuperheroesSearch({ setTeam, team }) {
+function Search({ setTeam, team }) {
   const [query, setQuery] = React.useState(null);
   const { status, data: superheroes, error } = useGetSuperheroes(query);
 
@@ -22,7 +22,7 @@ function SuperheroesSearch({ setTeam, team }) {
   return (
     <>
       <section className='w-11/12 py-5 mx-auto my-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>
-        {error && <ErrorSearch handleClose={handleClose} message={error.message} />}
+        {error && <Error handleClose={handleClose} message={error.message} />}
         <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50'>
           Find Superheroes
         </h1>
@@ -56,7 +56,7 @@ function SuperheroesSearch({ setTeam, team }) {
         </form>
       </section>
       {superheroes && (
-        <SearchResults
+        <Results
           handleClose={handleClose}
           setTeam={setTeam}
           superheroes={superheroes}
@@ -67,9 +67,9 @@ function SuperheroesSearch({ setTeam, team }) {
   );
 }
 
-SuperheroesSearch.propTypes = {
+Search.propTypes = {
   setTeam: PropTypes.func.isRequired,
   team: PropTypes.array.isRequired,
 };
 
-export default SuperheroesSearch;
+export default Search;

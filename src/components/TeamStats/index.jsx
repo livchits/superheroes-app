@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 
 import Appearance from './Appearance';
 import Powerstats from './Powerstats';
+
 function TeamStats({ team }) {
   return (
     <article className='w-11/12 py-5 mx-auto text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 
-import { getHueValue } from '../utils/getHueValue';
+import { getHueValue } from '../../../utils/getHueValue';
 
 const getHueforMaxValue100 = getHueValue(100);
 

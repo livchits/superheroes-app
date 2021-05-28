@@ -2,9 +2,9 @@ import * as React from 'react';
 import PropTypes from 'prop-types';
 import { XIcon } from '@heroicons/react/solid';
 
-import useCloseFromOutside from '../hooks/useCloseFromOutside';
+import useCloseFromOutside from '../../hooks/useCloseFromOutside';
 
-function ErrorSearch({ message, handleClose }) {
+function Error({ message, handleClose }) {
   const ref = useCloseFromOutside(handleClose);
 
   return (
@@ -24,9 +24,9 @@ function ErrorSearch({ message, handleClose }) {
   );
 }
 
-ErrorSearch.propTypes = {
+Error.propTypes = {
   message: PropTypes.string.isRequired,
   handleClose: PropTypes.func.isRequired,
 };
 
-export default ErrorSearch;
+export default Error;
