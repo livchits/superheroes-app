@@ -9,11 +9,11 @@ function Home() {
   const [team, setTeam] = React.useState(initialTeam);
 
   return (
-    <>
+    <main className='min-h-screen'>
       <TeamStats team={team} />
       <SuperheroesSearch setTeam={setTeam} team={team} />
       {Boolean(team.length) && <SuperheroesList setTeam={setTeam} team={team} />}
-    </>
+    </main>
   );
 }
 
