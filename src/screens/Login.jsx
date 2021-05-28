@@ -34,7 +34,7 @@ function Login() {
     <Redirect to='/home' />
   ) : (
     <div className='flex flex-col justify-center h-screen'>
-      <main className='h-screen text-gray-700 bg-gray-200 rounded-md shadow-sm md:max-w-md bg-opacity-40 sm:w-11/12 sm:mx-auto sm:h-3/4'>
+      <main className='h-screen text-gray-700 bg-gray-200 rounded-md shadow-sm md:max-w-md bg-opacity-70 sm:w-11/12 sm:mx-auto sm:h-3/4'>
         <h1 className='px-1 py-12 text-4xl leading-normal text-center text-shadow sm:text-5xl'>
           Welcome to the <br />
           <span className='text-5xl font-bold text-transparent bg-clip-text text-shadow-none bg-gradient-to-l from-blue-500 to-blue-600 sm:text-6xl'>
