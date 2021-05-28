@@ -3,7 +3,21 @@
 @tailwind utilities;
 
 body {
-  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  /* display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100vh;
+  */
+  background-image: linear-gradient(
+      to bottom,
+      rgba(139, 203, 255, 0.411),
+      rgba(241, 160, 160, 0.6)
+    ),
+    url('https://source.unsplash.com/yRQ6EL25vxU/full');
+  background-size: cover;
 }
