@@ -5,7 +5,7 @@ import Appearance from './Appearance';
 import Powerstats from './Powerstats';
 function TeamStats({ team }) {
   return (
-    <article className='w-11/12 py-8 mx-auto text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>
+    <article className='w-11/12 py-6 mx-auto text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>
       <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50'>
         Team Stats
       </h1>
