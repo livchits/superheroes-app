@@ -1,8 +1,8 @@
-# Superheroes App
+# 🦸 Superheroes App
 
 Es una aplicación que permite crear un equipo de superhéroes consumiendo una API que permite buscar superhéroes.
 
-## Funcionalidades
+## 💻 Funcionalidades
 
 - La aplicación cuenta con un formulario para loguearse a través de una petición POST a una API con un correo electrónico y una contraseña, luego de chequear que ninguno de esos campos estén vacíos.
 - El formulario de login muestra un mensaje de error si:
@@ -24,7 +24,7 @@ Es una aplicación que permite crear un equipo de superhéroes consumiendo una A
   - no se haya alcanzado el límite de tres miembros con orientación buena ni de tres con orientación mala
 - En caso de no pasar alguna validación al intentar agregar un superhéroe se informa cuál es el error
 
-## Tecnologías y librerías utilizadas
+## 🔧 Tecnologías y librerías utilizadas
 
 - React
 - React Router
@@ -34,7 +34,7 @@ Es una aplicación que permite crear un equipo de superhéroes consumiendo una A
 - Eslint
 - Prettier
 
-## Cómo ejecutarlo
+## 🏃 Cómo ejecutarlo
 
 1. Clonar el repositorio
 
@@ -54,7 +54,7 @@ donde `API_TOKEN` es un token que se puede obtener en la web de la [SuperHero AP
 
    `npm run dev`
 
-## Puntos pendientes o para mejorar
+## Puntos pendientes o para mejorar📝
 
 - Implementar Portals de React para mostrar los modales.
 - Los errores que puedan surgir de la validación al agregar nuevos personajes se muestran en alerts del navegador: podrían usarse modales o algún otro componente.
