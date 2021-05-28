@@ -1,6 +1,5 @@
 import { normalizeData } from '../utils';
-
-const { VITE_SEARCH_URL: SEARCH_URL } = import.meta.env;
+import { SEARCH_URL } from '../constants';
 
 async function api(query, abortController) {
   try {

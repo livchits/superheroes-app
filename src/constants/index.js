@@ -14,6 +14,9 @@ const ADD_CHECKING_ERRORS = {
 
 const LOGIN_URL = 'http://challenge-react.alkemy.org/';
 
+const { VITE_API_ACCESS_TOKEN } = import.meta.env;
+const SEARCH_URL = `https://www.superheroapi.com/api.php/${VITE_API_ACCESS_TOKEN}/search/`;
+
 const team = [
   {
     id: '70',
@@ -49,4 +52,5 @@ export {
   MAXIMUM_ALIGNMENT_MEMBERS,
   ADD_CHECKING_ERRORS,
   LOGIN_URL,
+  SEARCH_URL,
 };
