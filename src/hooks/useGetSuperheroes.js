@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-import api from '../api/api';
+import searchApi from '../services/searchApi';
 
 function useGetSuperheros(query) {
   const [{ status, data, error }, setState] = React.useState({
@@ -13,7 +13,7 @@ function useGetSuperheros(query) {
     const abortController = new AbortController();
     const getSuperheros = async (query) => {
       setState((state) => ({ ...state, status: 'pending' }));
-      const { data, error } = await api(query, abortController);
+      const { data, error } = await searchApi(query, abortController);
       error
         ? setState((state) => ({ ...state, status: 'rejected', error }))
         : setState((state) => ({ ...state, status: 'resolved', data }));

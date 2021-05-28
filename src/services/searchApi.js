@@ -1,7 +1,7 @@
 import { normalizeData } from '../utils';
 import { SEARCH_URL } from '../constants';
 
-async function api(query, abortController) {
+async function searchApi(query, abortController) {
   try {
     const response = await fetch(`${SEARCH_URL}${query}`, {
       signal: abortController.signal,
@@ -21,4 +21,4 @@ async function api(query, abortController) {
   }
 }
 
-export default api;
+export default searchApi;
