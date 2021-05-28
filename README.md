@@ -58,5 +58,6 @@ donde `API_TOKEN` es un token que se puede obtener en la web de la [SuperHero AP
 
 - Implementar Portals de React para mostrar los modales.
 - Los errores que puedan surgir de la validación al agregar nuevos personajes se muestran en alerts del navegador: podrían usarse modales o algún otro componente.
-- Mejorar el código de la función que realiza las búsquedas: como hay respuestas de la API exitosas que son mensajes de error, el manejo de errores quedó algo "sucio" y quizá se lo pueda encapsular en otra función.
+- Hacer más claro el código de la función que realiza las búsquedas: como hay respuestas de la API exitosas que son mensajes de error, el manejo de errores quedó algo "sucio" y quizá se lo pueda encapsular en otra función.
+- Explorar posibilidades para mejorar cómo se crea la lista de detalles del componente Details.
 - Sumar un header con un botón que permita cerrar sesión.
