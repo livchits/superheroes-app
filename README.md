@@ -48,11 +48,11 @@ donde `API_TOKEN` es un token que se puede obtener en la web de la [SuperHero AP
 
 3. Instalar las dependencias con
 
-   `npm install`
+`npm install`
 
 4. Correr el proyecto en modo desarrollo con
 
-   `npm run dev`
+`npm run dev`
 
 ## 📝 Puntos pendientes o para mejorar
 
