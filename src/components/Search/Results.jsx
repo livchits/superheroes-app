@@ -9,11 +9,9 @@ function Results({ superheroes, setTeam, team, handleClose }) {
   const ref = useCloseFromOutside(handleClose);
 
   const handleAdd = (superhero) => {
-    const addChecking = superheroIsOkToAdd(team, superhero);
+    const { error, messages, newTeam } = superheroIsOkToAdd(team, superhero);
 
-    addChecking.error
-      ? alert(...addChecking.messages)
-      : setTeam([...addChecking.newTeam]);
+    error ? alert(messages) : setTeam(newTeam);
   };
 
   return (
