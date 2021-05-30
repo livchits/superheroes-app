@@ -13,7 +13,7 @@ function TeamList({ setTeam, team }) {
       <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50'>
         Your team
       </h1>
-      <ul className='sm:flex sm:flex-wrap sm:justify-evenly md:justify-start md:ml-1'>
+      <ul className='sm:flex sm:flex-wrap sm:justify-evenly md:ml-1'>
         {team.map((superhero) => (
           <Card key={superhero.id} handleRemove={removeSuperhero} superhero={superhero} />
         ))}
