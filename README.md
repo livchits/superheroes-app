@@ -24,7 +24,7 @@ Es una aplicación que permite crear un equipo de superhéroes consumiendo una A
   - no se haya alcanzado el límite de tres miembros con orientación buena ni de tres con orientación mala
 - En caso de no pasar alguna validación al intentar agregar un superhéroe se informa cuál es el error
 
-## 🔧 Tecnologías y librerías utilizadas
+## 🔧 Tecnologías, librerías y herramientas utilizadas
 
 - React
 - React Router
@@ -54,10 +54,11 @@ donde `API_TOKEN` es un token que se puede obtener en la web de la [SuperHero AP
 
    `npm run dev`
 
-## Puntos pendientes o para mejorar📝
+## 📝 Puntos pendientes o para mejorar
 
 - Implementar Portals de React para mostrar los modales.
 - Los errores que puedan surgir de la validación al agregar nuevos personajes se muestran en alerts del navegador: podrían usarse modales o algún otro componente.
 - Hacer más claro el código de la función que realiza las búsquedas: como hay respuestas de la API exitosas que son mensajes de error, el manejo de errores quedó algo "sucio" y quizá se lo pueda encapsular en otra función.
 - Explorar posibilidades para mejorar cómo se crea la lista de detalles del componente Details.
 - Sumar un header con un botón que permita cerrar sesión.
+- Crear mejores componentes para algunas partes de la UI.
