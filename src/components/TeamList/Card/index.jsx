@@ -20,7 +20,7 @@ function Card({ superhero, handleRemove }) {
           <button
             className='w-24 px-3 text-lg font-semibold leading-normal transition-colors duration-300 border-2 border-blue-600 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 bg-gradient-to-l hover:from-blue-500 hover:to-blue-600'
             type='submit'
-            onClick={() => setShowDetails(true)}
+            onClick={() => setShowDetails(!showDetails)}
           >
             Details
           </button>
@@ -34,7 +34,7 @@ function Card({ superhero, handleRemove }) {
         </div>
       </li>
       {showDetails && (
-        <Details handleClose={() => setShowDetails(false)} superhero={superhero} />
+        <Details handleClose={() => setShowDetails(!showDetails)} superhero={superhero} />
       )}
     </>
   );
