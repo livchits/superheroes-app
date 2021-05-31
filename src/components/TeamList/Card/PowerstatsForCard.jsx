@@ -7,15 +7,15 @@ const getHueforMaxValue100 = getHueValue(100);
 
 function PowerstatsForCard({ powerstats }) {
   return (
-    <ul className='flex-1 ml-1 mr-2'>
+    <ul className='flex-1 mr-2 ml-1'>
       {Object.entries(powerstats).map(([powerstat, value]) => (
         <li key={powerstat}>
           <div className='flex justify-between mb-1 text-base leading-3'>
             <div className='pr-3 capitalize'>{powerstat}</div>
             <div className='text-right text-gray-500 text-opacity-100 '>{value}</div>
           </div>
-          <div className='w-full mb-1.5'>
-            <div className='bg-gray-400 bg-opacity-90 h-2 mx-auto rounded-lg p-0.5'>
+          <div className='mb-1.5 w-full'>
+            <div className='p-0.5 mx-auto h-2 bg-gray-400 bg-opacity-90 rounded-lg'>
               <div
                 className='h-full rounded-md rounded-r-none'
                 style={{

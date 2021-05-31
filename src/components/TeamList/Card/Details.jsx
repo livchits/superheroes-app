@@ -24,20 +24,20 @@ function Details({ superhero, handleClose }) {
   } = superhero;
 
   return (
-    <div className='fixed top-0 left-0 z-10 grid items-center w-screen h-screen bg-gray-200 bg-opacity-95'>
-      <article ref={ref} className='w-11/12 max-w-lg p-3 mx-auto bg-gray-300 rounded-lg'>
+    <div className='grid fixed top-0 left-0 z-10 items-center w-screen h-screen bg-gray-200 bg-opacity-95'>
+      <article ref={ref} className='p-3 mx-auto w-11/12 max-w-lg bg-gray-300 rounded-lg'>
         <button
           aria-label='Close search results'
-          className='block p-2 ml-auto transition-colors duration-200 bg-gray-400 rounded-lg bg-opacity-80 hover:bg-gray-500 group focus:ring-gray-600 focus:ring-2 focus:outline-none'
+          className='group block p-2 ml-auto bg-gray-400 hover:bg-gray-500 bg-opacity-80 rounded-lg focus:ring-2 focus:ring-gray-600 transition-colors duration-200 focus:outline-none'
           onClick={handleClose}
         >
-          <XIcon className='w-6 mx-auto text-gray-600 transition-colors duration-200 group-hover:text-gray-300' />
+          <XIcon className='mx-auto w-6 text-gray-600 group-hover:text-gray-300 transition-colors duration-200' />
         </button>
-        <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50'>
+        <h1 className='py-3 px-7 mx-auto mb-6 w-max text-3xl font-semibold text-center text-gray-50 bg-gradient-to-l from-blue-500 to-blue-600 rounded-xl'>
           {name}
         </h1>
         <div className='flex mx-auto'>
-          <img alt={name} className='mb-2 ml-2 mr-1 h-44 rounded-xl' src={imageUrl} />
+          <img alt={name} className='mr-1 mb-2 ml-2 h-44 rounded-xl' src={imageUrl} />
           <PowerstatsForCard powerstats={powerstats} />
         </div>
         <ul className='mx-2 text-lg leading-tight'>

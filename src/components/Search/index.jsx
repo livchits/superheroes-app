@@ -21,12 +21,12 @@ function Search({ setTeam, team }) {
 
   return (
     <>
-      <section className='w-11/12 py-5 mx-auto my-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>
+      <section className='py-5 my-2 mx-auto md:mx-auto w-11/12 md:max-w-4xl text-blue-600 bg-gray-200 bg-opacity-90 rounded-md shadow-sm'>
         {error && <Error handleClose={handleClose} message={error.message} />}
-        <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50'>
+        <h1 className='py-3 px-7 mx-auto mb-6 w-max text-3xl font-semibold text-center text-gray-50 bg-gradient-to-l from-blue-500 to-blue-600 rounded-xl'>
           Find Superheroes
         </h1>
-        <form className='max-w-lg px-4 mx-auto ' onSubmit={handleSubmit}>
+        <form className='px-4 mx-auto max-w-lg ' onSubmit={handleSubmit}>
           <label className='pl-0.5 text-lg' htmlFor='search'>
             Enter a superhero name
           </label>
@@ -34,7 +34,7 @@ function Search({ setTeam, team }) {
             <div className='relative w-full'>
               <input
                 required
-                className='flex-1 w-full h-full pl-2 text-gray-500 border-2 border-gray-400 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent placeholder-opacity-80'
+                className='flex-1 pl-2 w-full h-full placeholder-opacity-80 text-gray-500 rounded-xl border-2 border-gray-400 focus:border-transparent focus:ring-2 focus:ring-blue-500 shadow-md focus:outline-none'
                 id='search'
                 name='search'
                 placeholder='Ex: "Batman"'
@@ -47,7 +47,7 @@ function Search({ setTeam, team }) {
               )}
             </div>
             <button
-              className='p-2 px-4 ml-2 text-lg transition duration-300 border-2 border-blue-600 shadow-md rounded-xl focus:ring-blue-500 focus:ring-2 focus:outline-none focus:border-transparent hover:text-gray-100 bg-gradient-to-l hover:from-blue-500 hover:to-blue-600'
+              className='p-2 px-4 ml-2 text-lg hover:text-gray-100 bg-gradient-to-l hover:from-blue-500 hover:to-blue-600 rounded-xl border-2 border-blue-600 focus:border-transparent focus:ring-2 focus:ring-blue-500 shadow-md transition duration-300 focus:outline-none'
               type='submit'
             >
               Search

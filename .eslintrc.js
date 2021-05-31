@@ -21,8 +21,11 @@ module.exports = {
     ecmaVersion: 12,
     sourceType: 'module',
   },
-  plugins: ['react', 'jsx-a11y', 'import', 'prettier'],
+  plugins: ['react', 'jsx-a11y', 'import', 'prettier', 'tailwindcss'],
   rules: {
+    'tailwindcss/classnames-order': 'warn',
+    'tailwindcss/no-custom-classname': 'warn',
+    'tailwindcss/no-contradicting-classname': 'error',
     'import/order': ['warn', { 'newlines-between': 'always' }],
     'react/self-closing-comp': 'warn',
     'react-hooks/rules-of-hooks': 'warn',

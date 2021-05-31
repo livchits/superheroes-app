@@ -9,8 +9,8 @@ function TeamList({ setTeam, team }) {
   };
 
   return (
-    <section className='w-11/12 py-5 mx-auto mt-2 text-blue-600 bg-gray-200 rounded-md shadow-sm md:mx-auto md:max-w-4xl bg-opacity-90'>
-      <h1 className='py-3 mx-auto mb-6 text-3xl font-semibold text-center w-max bg-gradient-to-l from-blue-500 to-blue-600 px-7 rounded-xl text-gray-50'>
+    <section className='py-5 mx-auto md:mx-auto mt-2 w-11/12 md:max-w-4xl text-blue-600 bg-gray-200 bg-opacity-90 rounded-md shadow-sm'>
+      <h1 className='py-3 px-7 mx-auto mb-6 w-max text-3xl font-semibold text-center text-gray-50 bg-gradient-to-l from-blue-500 to-blue-600 rounded-xl'>
         Your team
       </h1>
       <ul className='sm:flex sm:flex-wrap sm:justify-evenly md:ml-1'>

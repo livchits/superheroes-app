@@ -8,8 +8,8 @@ function Appearance({ team }) {
   const averages = getAverageOf(team, PROPERTIES_TO_GET_AVERAGE);
 
   return (
-    <article className='px-4 md:w-2/5 lg:pl-10'>
-      <h2 className='mt-4 text-2xl font-bold sm:mt-0'>Average Appearance</h2>
+    <article className='px-4 lg:pl-10 md:w-2/5'>
+      <h2 className='mt-4 sm:mt-0 text-2xl font-bold'>Average Appearance</h2>
       <ul className='px-1 mt-2'>
         {Object.keys(averages).map((property) => {
           const value = averages[property];
