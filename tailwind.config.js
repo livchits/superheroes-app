@@ -98,6 +98,7 @@ module.exports = {
       'gradient-to-bl': 'linear-gradient(to bottom left, var(--tw-gradient-stops))',
       'gradient-to-l': 'linear-gradient(to left, var(--tw-gradient-stops))',
       'gradient-to-tl': 'linear-gradient(to top left, var(--tw-gradient-stops))',
+      heroes: 'url("https://source.unsplash.com/yRQ6EL25vxU/full")',
     },
     backgroundOpacity: (theme) => theme('opacity'),
     backgroundPosition: {
