@@ -34,32 +34,32 @@ function Login() {
     <Redirect to='/home' />
   ) : (
     <div className='flex flex-col justify-center h-screen'>
-      <main className='h-screen text-gray-700 bg-gray-200 rounded-md shadow-sm md:max-w-md bg-opacity-70 sm:w-11/12 sm:mx-auto sm:h-3/4'>
-        <h1 className='px-1 py-12 text-4xl leading-normal text-center text-shadow sm:text-5xl'>
+      <main className='sm:mx-auto sm:w-11/12 md:max-w-md h-screen sm:h-3/4 text-gray-700 bg-gray-200 bg-opacity-70 rounded-md shadow-sm'>
+        <h1 className='py-12 px-1 text-4xl sm:text-5xl leading-normal text-center'>
           Welcome to the <br />
-          <span className='text-5xl font-bold text-transparent bg-clip-text text-shadow-none bg-gradient-to-l from-blue-500 to-blue-600 sm:text-6xl'>
+          <span className='text-5xl sm:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-l from-blue-500 to-blue-600'>
             Superheroes App
           </span>
         </h1>
         <form onSubmit={handleSubmit}>
-          <div className='w-2/3 pb-6 mx-auto max-w-min'>
+          <div className='pb-6 mx-auto w-2/3 max-w-min'>
             <label className='block pl-0.5 text-lg font-bold' htmlFor='email'>
               Email
             </label>
             <input
-              className='p-2.5 text-gray-700 border-none rounded-md shadow-sm outline-none ring-1 ring-gray-300 focus:ring-4 focus:ring-blue-500'
+              className='p-2.5 text-gray-700 rounded-md border-none ring-1 focus:ring-4 ring-gray-300 focus:ring-blue-500 shadow-sm outline-none'
               id='email'
               name='email'
               placeholder='your@email.com'
               type='email'
             />
           </div>
-          <div className='w-2/3 mx-auto mb-6 max-w-min'>
-            <label className='block text-lg pl-0.5 font-bold' htmlFor='password'>
+          <div className='mx-auto mb-6 w-2/3 max-w-min'>
+            <label className='block pl-0.5 text-lg font-bold' htmlFor='password'>
               Password
             </label>
             <input
-              className='p-2.5 text-gray-700 border-none rounded-md shadow-sm outline-none ring-1 ring-gray-300 focus:ring-4 focus:ring-blue-500'
+              className='p-2.5 text-gray-700 rounded-md border-none ring-1 focus:ring-4 ring-gray-300 focus:ring-blue-500 shadow-sm outline-none'
               id='password'
               name='password'
               placeholder='Your password'
@@ -73,7 +73,7 @@ function Login() {
               }`}
           >
             {status === 'pending' ? (
-              <div className='mx-auto bg-transparent w-min animate-spin'>
+              <div className='mx-auto w-min bg-transparent animate-spin'>
                 <Rolling />
               </div>
             ) : (
