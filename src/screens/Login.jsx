@@ -49,7 +49,7 @@ function Login() {
               className='p-2.5 text-gray-700 rounded-md border-none ring-1 focus:ring-4 ring-gray-300 focus:ring-blue-500 shadow-sm outline-none'
               id='email'
               name='email'
-              placeholder='your@email.com'
+              placeholder='challenge@alkemy.org'
               type='email'
             />
           </div>
@@ -61,7 +61,7 @@ function Login() {
               className='p-2.5 text-gray-700 rounded-md border-none ring-1 focus:ring-4 ring-gray-300 focus:ring-blue-500 shadow-sm outline-none'
               id='password'
               name='password'
-              placeholder='Your password'
+              placeholder='react'
               type='password'
             />
           </div>
