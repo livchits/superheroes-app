@@ -7,9 +7,9 @@ import LoginError from '../components/LoginError';
 import { checkIfAnyInputIsEmpty } from '../utils/checkIfInputsAreEmpty';
 
 function Login() {
-  const [formData, setFormData] = React.useState(null);
+  const [loginData, setLoginData] = React.useState(null);
   const [inputError, setInputerror] = React.useState({ error: false, message: null });
-  const { user, error, status } = useLogin(formData);
+  const { user, error, status } = useLogin(loginData);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -25,8 +25,7 @@ function Login() {
         message: 'Neither the email nor the password can be empty',
       });
     } else {
-      const formData = new FormData(event.target);
-      setFormData(formData);
+      setLoginData({ emailValue, passwordValue });
     }
   };
 

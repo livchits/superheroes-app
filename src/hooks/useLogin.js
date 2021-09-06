@@ -1,20 +1,19 @@
 import * as React from 'react';
 
 import { useUser } from '../context/UserContext';
-import loginUser from '../services/loginUser';
+import mockedLoginUser from '../services/mockedLogin';
 
-function useLogin(formData) {
+function useLogin(loginData) {
   const [user, setUser] = useUser();
   const [error, setError] = React.useState({ error: false, message: null });
   const [status, setStatus] = React.useState('idle');
 
   React.useEffect(() => {
-    const abortController = new AbortController();
+    let shouldSetUser = true;
 
-    if (formData) {
+    if (loginData) {
       setStatus('pending');
-
-      loginUser(formData, abortController)
+      mockedLoginUser(loginData)
         .then((responseData) => {
           if (responseData.error) {
             throw new Error(responseData.error);
@@ -23,15 +22,18 @@ function useLogin(formData) {
             'superheroes_app_user',
             JSON.stringify(responseData)
           );
-          setUser({ superheroes_app_user: responseData });
+          if (shouldSetUser) {
+            setUser({ superheroes_app_user: responseData });
+          }
         })
-        .catch((error) => {
+        .catch(({ error }) => {
           setError({ error: true, message: error.message });
         })
         .finally(() => setStatus('complete'));
     }
-    return () => abortController.abort();
-  }, [formData, setUser]);
+
+    return () => (shouldSetUser = false);
+  }, [loginData, setUser]);
 
   return { user, error, status };
 }
