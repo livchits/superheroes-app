@@ -2,6 +2,9 @@
 
 Es una aplicación que permite crear un equipo de superhéroes consumiendo una API que permite buscar superhéroes.
 
+![imagen](https://user-images.githubusercontent.com/48001346/132266688-174de3ce-4a6b-4126-9cd3-1fd2e043328d.png)
+![imagen](https://user-images.githubusercontent.com/48001346/132266856-835427d5-c89b-43c2-ad66-639ae73acd79.png)
+
 ## 💻 Funcionalidades
 
 - La aplicación cuenta con un formulario para loguearse a través de una petición POST a una API con un correo electrónico y una contraseña, luego de chequear que ninguno de esos campos estén vacíos.
